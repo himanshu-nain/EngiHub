@@ -1,12 +1,14 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login
+from django.contrib.auth import logout as outlog
 from django.contrib.auth import logout
-from django.contrib.auth.forms import PasswordResetForm
 from django.contrib.auth.decorators import login_required
 from .forms import UserForm, FileForm
 
 
 def intro(request):
+    if request.user.is_authenticated:
+        return redirect('/dashboard')
     return render(request, 'intro_templates/intro.html', {})
 
 
@@ -19,7 +21,9 @@ def _login_(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                return redirect(request.POST.get('next',default = '/dashboard'))
+                if request.POST['next'] == '':
+                    return redirect('/dashboard')
+                return redirect(request.POST['next'])
             else:
                 return render(request, 'login/login.html', {'error_message': 'Your account has been disabled'})
         else:
@@ -48,7 +52,7 @@ def upload_file(request):
 
 
 def _logout_(request):
-    logout(request)
+    outlog(request)
     return redirect('/login')
 
 
