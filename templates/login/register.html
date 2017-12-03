@@ -1,0 +1,48 @@
+{% extends 'base/base.html' %}
+{% block title %}Register | Engihub{% endblock %}
+
+{% load static %}
+
+{% block stylesheets %}
+
+    <link rel="stylesheet" href={% static "login/style.css" %}>
+
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="card w-75 card-container">
+
+            <div class="card-title">
+                    <h4>Create My Account</h4>
+                    <br>
+            </div>
+
+            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+            <p id="profile-name" class="profile-name-card"></p>
+
+            {% if error_message %}
+                <span style="color: #ff503a; margin-bottom: 10px;"><strong>{{ error_message }}</strong></span>
+            {% endif %}
+
+            <form class="form-signin" role="form" action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                {% for field in form %}
+
+                    {{ field }}
+
+                {% endfor %}
+
+                <div class="form-group">
+                    <button class="btn btn-outline-success btn-block " type="submit">Register</button>
+                </div>
+            <div class="panel-footer">
+            Already have an account?<br><a href="{% url 'main:login' %}">Click here</a> to log in.
+        </div>
+            </form>
+
+        </div>
+    </div>
+    </div>
+{% endblock %}

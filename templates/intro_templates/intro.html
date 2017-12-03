@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href={% static "main/style.css" %}>
+    <link rel="stylesheet" href={% static "bootstrap/css/bootstrap.min.css" %}>
+    <link rel="stylesheet" href={% static "bootstrap/css/bootstrap-grid.min.css" %}>
+    <link rel="stylesheet" href={% static "font-awesome/css/font-awesome.min.css" %}>
+    <link rel="stylesheet" href={% static "bootstrap-social/bootstrap-social.css" %}>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+     <a class="navbar-brand" href="">EngiHub</a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'main:login' %}">
+                    <span class="glyphicon glyphicon-book" aria-hidden="true"></span>&nbsp;
+                    Login</a>
+            </li>
+            <li class="nav-item active">
+            <a class="nav-link" href="{% url 'main:register' %}">
+                <span class="glyphicon glyphicon-book" aria-hidden="true"></span>&nbsp;
+                Register</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">
+                <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>&nbsp;
+                Features</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">
+                <span class="glyphicon glyphicon-book" aria-hidden="true"></span>&nbsp;
+                About Us</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">
+                <span class="glyphicon glyphicon-phone" aria-hidden="true"></span>&nbsp;
+                Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col align-self-center">
+        <table class="content">
+          <tbody>
+            <tr>
+              <td class="align-middle">    
+                <img src="{% static "main/images/logo.png" %}" alt="Logo" class="logo">
+                <h1 class="title">Tagline goes here</h1>
+                <form method="get"
+                {% if user.is_authenticated %}
+                        action = "{% url 'main:dashboard' %}"
+                {% else %}
+                        action = "{% url 'main:login' %}"
+                {% endif %}>
+                    <button onclick="" type="Submit" class="go-btn display-2 btn btn-primary btn-lg ">Get Started</button>
+                </form>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" ></script>
+<script src={% static "bootstrap/js/bootstrap.min.js" %}></script>
+</html>
