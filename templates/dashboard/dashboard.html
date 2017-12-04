@@ -6,37 +6,87 @@
 
     {% block stylesheets %}
 
-    <link rel="stylesheet" href={% static "dashboard/dash-styles.css" %}>
+    <link rel="stylesheet" href={% static "dashboard/dash.css" %}>
 
 {% endblock %}
 
-
-
-
-
 {% block content %}
 
-<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-            <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
-              <i class="material-icons">play_circle_filled</i>
-            </header>
-            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
-              <div class="mdl-card__supporting-text">
-                <h4>Features</h4>
-                Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Nostrud in laboris labore nisi amet do dolor eu fugiat consectetur elit cillum esse.
-              </div>
-              <div class="mdl-card__actions">
-                <a href="#" class="mdl-button">Read our features</a>
-              </div>
-            </div>
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn1">
-              <i class="material-icons">more_vert</i>
-            </button>
-            <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn1">
-            <a href=""><li class="mdl-menu__item">Dolor</li></a>
-            </ul>
-          </section>
- 
+ <div class="mdl-card mdl-shadow--2dp mdl-card--horizontal">
+  <table>
+    <tr>
+      <td width="100px" style="background: url('http://placehold.it/200x300/DC143C/FFFFFF') center / cover">
+      </td>
+      <td>
+        <div class="mdl-card__title">
+          <h2 class="mdl-card__title-text">File Name</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+Description        </div>
+        <div class="mdl-card__actions mdl-card--border">
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">Download</a>
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">Report</a>
+
+        </div>
+        <div class="mdl-card__menu">
+          <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple"><i class="material-icons">delete</i></button>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+
+</div>
+<div class="mdl-card mdl-shadow--2dp mdl-card--horizontal">
+  <table>
+    <tr>
+      <td width="100px" style="background: url('http://placehold.it/200x300/DC143C/FFFFFF') center / cover">
+      </td>
+      <td>
+        <div class="mdl-card__title">
+          <h2 class="mdl-card__title-text">File Name</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+Description        </div>
+        <div class="mdl-card__actions mdl-card--border">
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">Download</a>
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">Report</a>
+
+        </div>
+        <div class="mdl-card__menu">
+          <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple"><i class="material-icons">delete</i></button>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div class="mdl-card mdl-shadow--2dp mdl-card--horizontal">
+  <table>
+    <tr>
+      <td width="100px" style="background: url('http://placehold.it/200x300/DC143C/FFFFFF') center / cover">
+      </td>
+      <td>
+        <div class="mdl-card__title">
+          <h2 class="mdl-card__title-text">File Name</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+Description        </div>
+        <div class="mdl-card__actions mdl-card--border">
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">Download</a>
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">Report</a>
+
+        </div>
+        <div class="mdl-card__menu">
+          <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple"><i class="material-icons">delete</i></button>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<br><br>
+
 {% endblock %}
 
 

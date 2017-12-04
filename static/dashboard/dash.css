@@ -1,0 +1,16 @@
+
+.mdl-card {
+  margin-top: 40px;
+}
+.mdl-card { 
+margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.mdl-card--horizontal {
+  min-height: 0px;
+}
+.mdl-card--horizontal table {
+  border-spacing: 0;
+}
