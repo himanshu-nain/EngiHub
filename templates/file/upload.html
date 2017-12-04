@@ -1,11 +1,7 @@
-{% extends 'base/base.html' %}
-{% block title %}Upload File | EngiHub{% endblock %}
+{% extends 'dashboard/base-login.html' %}
+{% block title %}Upload | EngiHub{% endblock %}
 {% load static staticfiles %}
-{% block stylesheets %}
 
-    <link rel="stylesheet" href={% static "login/style.css" %}>
-
-{% endblock %}
 
 {% block content %}
   <form role="form" action="" method="post" enctype="multipart/form-data">
