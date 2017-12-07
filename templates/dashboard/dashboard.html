@@ -1,219 +1,51 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Dashboard | EngiHub</title>
-    <link rel="stylesheet" href={% static "file/style.css"%}>
-    <link rel="stylesheet" href={% static "bootstrap/css/bootstrap.min.css"%}>
-    <link rel="stylesheet" href={% static "bootstrap/css/bootstrap-grid.min.css" %}>
-    <link rel="stylesheet" href={% static "font-awesome/css/font-awesome.min.css" %}>
-    <link rel="stylesheet" href={% static "bootstrap-social/bootstrap-social.css" %}>
-</head>
-<body>
 
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="{% url 'main:dashboard' %}">EngiHub</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                <a class="nav-link" href="{% url 'main:dashboard' %}">Dashboard</a>
-              </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="{% url 'main:file_upload' %}">Upload</a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="#">My Account</a>
-              </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="{% url 'main:logout' %}">Logout</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-    </header>
 
-<body>
+{% extends 'dashboard/base-login.html' %}
+{% block title %}My Files | EngiHub{% endblock %}
+{% load static staticfiles %}
+
+    {% block stylesheets %}
+
+    <link rel="stylesheet" href={% static "dashboard/dash.css" %}>
+
+{% endblock %}
+
+{% block content %}
 
 
 
 
-
-  <div class="container">
-    <div class="row">
-
-      <div class="col-md-3">
-          <div class="panel widget">
-          <div class="widget-header bg-purple">
-            <img class="widget-bg img-responsive" src="https://lorempixel.com/500/320/nature/8/" alt="Image">
-          </div>
-          <div class="widget-body text-center">
-            <img alt="Profile Picture" class="widget-img img-border-light" src="https://bootdey.com/img/Content/avatar/avatar3.png">
-            <h4 class="mar-no">USER</h4>
-            <p class="text-muted mar-btm">Software Engineering</p>
-            <div class="pad-btm">
-              <button class="btn btn-primary">Settings</button>
-                <a href="{% url 'main:logout' %}">
-                  <button class="btn btn-danger">Logout</button>
-                </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="col-sm-9 files">
-
-
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon2">
-          <span class="input-group-addon">
-            <i class="fa fa-search" aria-hidden="true"></i>
-          </span>
-        </div>
-
-
-        <div class="file-card card">
-          <div class="row">
-             <div class="col-4 file-type">
-                 <div class="row full-row">
-                   <div class="col"><h1>
-                       <i class="fa fa-file" aria-hidden="true"></i>
-                   </h1>
-                 </div>
-                  <div class="w-100"><span>{{ file.points }}</span> Points</div>
-                   <div class="col"><i class="fa fa-thumbs-o-up clicked" aria-hidden="true"></i>
-                 </div>
-                  <div class="col"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
-                 </div>
-                   <div class="w-100"><i class="fa fa-thumb-tack" aria-hidden="true"></i>
-     </div>
-             </div>
-         </div>
-         <div class="col-8 file-data">
-          <h3>
-           <span>{{ file.title }}</span>
-         </h3>
-         <h6>Size : <span>{{ file.file_size }}</span> MB</h6>
-         <h6>Downloaded : <span>{{ file.download_count }}</span> times</h6>
-            <div class="file-btn">
-                  <button href="#" class="btn btn-success"><i class="fa fa-download" aria-hidden="true"></i>
-             Download</button>
-             <button href="#" class="btn btn-dark"><i class="fa fa-flag" aria-hidden="true"></i>
-             Report</button>
-             <form action="" method="post" style="display:inline">
-                 {% csrf_token %}
-                 <button href="#" class="btn btn-danger">
-                 <i class="fa fa-trash-o" aria-hidden="true"></i>
-                 Delete</button>
-             </form>
-            </div>
-
-         </div>
-     </div>
-
-
-        </div>
-        <div class="file-card card">
-          <div class="row">
-             <div class="col-4 file-type">
-                 <div class="row full-row">
-                   <div class="col"><h1>
-                       <i class="fa fa-file" aria-hidden="true"></i>
-                   </h1>
-                 </div>
-                  <div class="w-100"><span>{{ file.points }}</span> Points</div>
-                   <div class="col"><i class="fa fa-thumbs-o-up clicked" aria-hidden="true"></i>
-                 </div>
-                  <div class="col"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
-                 </div>
-                   <div class="w-100"><i class="fa fa-thumb-tack" aria-hidden="true"></i>
-        </div>
-             </div>
-         </div>
-         <div class="col-8 file-data">
-          <h3>
-           <span>{{ file.title }}</span>
-         </h3>
-         <h6>Size : <span>{{ file.file_size }}</span> MB</h6>
-         <h6>Downloaded : <span>{{ file.download_count }}</span> times</h6>
-            <div class="file-btn">
-                  <button href="#" class="btn btn-success"><i class="fa fa-download" aria-hidden="true"></i>
-             Download</button>
-             <button href="#" class="btn btn-dark"><i class="fa fa-flag" aria-hidden="true"></i>
-             Report</button>
-
-                <form action="" method="post" style="display:inline">
-                 {% csrf_token %}
-                 <button href="#" class="btn btn-danger">
-                 <i class="fa fa-trash-o" aria-hidden="true"></i>
-                 Delete</button>
-             </form>
-            </div>
-
-         </div>
-        </div>
-        </div>
-
-
-
-
-
-
-
-        <div class="file-card card">
-          <div class="row">
-             <div class="col-4 file-type">
-                 <div class="row full-row">
-                   <div class="col"><h1>
-                       <i class="fa fa-file" aria-hidden="true"></i>
-                   </h1>
-                 </div>
-                  <div class="w-100"><span>{{ file.points }}</span> Points</div>
-                   <div class="col"><i class="fa fa-thumbs-o-up clicked" aria-hidden="true"></i>
-                 </div>
-                  <div class="col"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
-                 </div>
-                   <div class="w-100"><i class="fa fa-thumb-tack" aria-hidden="true"></i>
-     </div>
-             </div>
-         </div>
-         <div class="col-8 file-data">
-          <h3>
-           <span>{{ file.title }}</span>
-         </h3>
-         <h6>Size : <span>{{ file.file_size }}</span> MB</h6>
-         <h6>Downloaded : <span>{{ file.download_count }}</span> times</h6>
-            <div class="file-btn">
-                  <button href="#" class="btn btn-success"><i class="fa fa-download" aria-hidden="true"></i>
-             Download</button>
-             <button href="#" class="btn btn-dark"><i class="fa fa-flag" aria-hidden="true"></i>
-             Report</button>
-             <form action="" method="post" style="display:inline">
-                 {% csrf_token %}
-                 <button href="#" class="btn btn-danger">
-                 <i class="fa fa-trash-o" aria-hidden="true"></i>
-                 Delete</button>
-             </form>
-            </div>
-
-         </div>
-     </div>
-        </div>
-
-
-      </div>
-    </div>
+<div class="mdl-card mdl-shadow--2dp mdl-card--horizontal">
+  <div class="mdl-card__media">
+    <img src="http://placehold.it/150x200/46B6AC/FFFFFF" alt="img">
   </div>
+    <div class="mdl-card__title">
+      <h2 class="mdl-card__title-text">File Name</h2>
+    </div>
+    
+    <div class="mdl-card__supporting-text">
+    0.00 MB <br>
+    File Description
+    File Description
+    File Description
+    File Description
+    File Description
+    File Description
+    File Description
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">Download</a>
+      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">Report</a>
+    </div>
+    <div class="mdl-card__menu">
+      <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple"><i class="material-icons">delete</i></button>
+    </div>
+</div>
 
-</body>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" ></script>
-    <script src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>
-</body>
-</html>
+
+<br><br>
+
+{% endblock %}
+
+

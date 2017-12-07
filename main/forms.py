@@ -16,9 +16,9 @@ class UserForm(forms.ModelForm):
 
 
 class FileForm(forms.ModelForm):
-    name = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Book Title', 'class': 'form-control w-25'}))
-    author = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Book Author', 'class': 'form-control w-25'}))
-    desc = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Book Description', 'class': 'form-control w-25'}))
+    name = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Name', 'class': 'mdl-textfield__input'}))
+    author = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Author', 'class': 'mdl-textfield__input'}))
+    desc = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Description', 'class': 'mdl-textfield__input'}))
 
     class Meta:
         model = File
