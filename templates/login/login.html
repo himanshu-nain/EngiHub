@@ -25,6 +25,7 @@
                 <input type="hidden" name="next" value="{{ request.GET.next }}" />
                 {% if error_message %}
                     <span style="color: #ff503a;">&nbsp;<strong>{{ error_message }}</strong></span><br><br>
+
                 {% endif %}
                 <input type="text" name="username" id="inputUsername" class="form-control" placeholder="Username" required autofocus/>
                 <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required/>
