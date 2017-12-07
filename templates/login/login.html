@@ -9,7 +9,7 @@
 {% block content %}
 
     <div class="container">
-        <div class="card card-container">
+        <div class="card w-75 card-container">
 
             <div class="card-title">
                 <h4>Sign in</h4>
@@ -19,27 +19,16 @@
             <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
             <p id="profile-name" class="profile-name-card"></p>
 
+
             <form class="form-signin" role="form" action="{% url 'main:login' %}" method="post" enctype="multipart/form-data">
-               
-               
-                   
-                   {% csrf_token %}
+                {% csrf_token %}
                 <input type="hidden" name="next" value="{{ request.GET.next }}" />
                 {% if error_message %}
                     <span style="color: #ff503a;">&nbsp;<strong>{{ error_message }}</strong></span><br><br>
                 {% endif %}
-         
-               
-               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input type="text" name="username" id="inputUsername" class="mdl-textfield__input" required />
-                <label class="mdl-textfield__label" for="inputUsername">Username</label>
-                </div>
-                
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input type="password" name="password" id="inputPassword" class="mdl-textfield__input " required/>
-                <label class="mdl-textfield__label" for="inputPassword">Password</label>
-                </div>
-                <button class="mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effects" type="submit">Sign in</button>
+                <input type="text" name="username" id="inputUsername" class="form-control" placeholder="Username" required autofocus/>
+                <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required/>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
             </form>
 
             <a href="{% url 'password_reset' %}" class="card-link">
