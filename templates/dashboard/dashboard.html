@@ -12,39 +12,30 @@
 
 {% block content %}
 
+    {% for afile in files %}
 
-
-
-<div class="mdl-card mdl-shadow--2dp mdl-card--horizontal">
+        <div class="mdl-card mdl-shadow--2dp mdl-card--horizontal">
   <div class="mdl-card__media">
     <img src="http://placehold.it/150x200/46B6AC/FFFFFF" alt="img">
   </div>
     <div class="mdl-card__title">
-      <h2 class="mdl-card__title-text">File Name</h2>
+      <h2 class="mdl-card__title-text">{{ afile.name }}</h2>
     </div>
-    
+
     <div class="mdl-card__supporting-text">
-    0.00 MB <br>
-    File Description
-    File Description
-    File Description
-    File Description
-    File Description
-    File Description
-    File Description
+    {{ afile.size }} MiB <br>
+    {{ afile.desc }}
     </div>
     <div class="mdl-card__actions mdl-card--border">
-      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">Download</a>
+      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple" href="{% url 'main:file_download' path=afile.file %}">Download</a>
       <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">Report</a>
     </div>
     <div class="mdl-card__menu">
-      <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple"><i class="material-icons">delete</i></button>
+        <a href="{% url 'main:file_delete' id=afile.id %}"> <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple"><i class="material-icons">delete</i></button></a>
     </div>
 </div>
-
-
-
-<br><br>
+        <br><br>
+    {% endfor %}
 
 {% endblock %}
 

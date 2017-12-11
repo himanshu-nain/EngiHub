@@ -12,5 +12,7 @@ urlpatterns = [
     url(r'^logout/$', view._logout_,name='logout'),
     url(r'^register/$',view._register_, name='register'),
     url(r'^upload/$',view.upload_file, name='file_upload'),
+    url(r'^download/(?P<path>.*)$', view.download_file, name='file_download'),
+    url(r'^delete/(?P<id>\d+)$', view.delete_file, name='file_delete'),
 
 ]
