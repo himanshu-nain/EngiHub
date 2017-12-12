@@ -43,9 +43,14 @@ def _login_(request):
 
 @login_required
 def _dash_(request):
-    files = File.objects.all()
-    return render(request, 'dashboard/dashboard.html', {'files': files})
-
+    try:
+        files = File.objects.all()
+        return render(request, 'dashboard/dashboard.html', {'files': files})
+    except:
+        import sys
+        print(str(sys.exc_info()))
+        files = []
+        return render(request, 'dashboard/dashboard.html', {'files': files})
 
 @login_required
 def upload_file(request):
