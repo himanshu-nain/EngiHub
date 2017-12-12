@@ -2,8 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2aaa29d-8cfd-4bfa-8681-e73863c6e593" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-social/.editorconfig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-social/.gitignore" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-social/LICENSE" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-social/README.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-social/assets/css/bootstrap.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-social/assets/css/docs.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-social/assets/css/font-awesome.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-social/assets/fonts/FontAwesome.otf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-social/assets/fonts/fontawesome-webfont.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-social/assets/fonts/fontawesome-webfont.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-social/assets/fonts/fontawesome-webfont.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-social/assets/fonts/fontawesome-webfont.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-social/assets/fonts/fontawesome-webfont.woff2" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-social/assets/img/bootstrap-social.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-social/assets/js/docs.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-social/assets/js/jquery.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-social/bootstrap-social.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-social/bootstrap-social.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-social/bootstrap-social.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-social/bower.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-social/index.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-social/package.json" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/main/views.py" afterPath="$PROJECT_DIR$/main/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,20 +50,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="19" column="38" lean-forward="false" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+            <state relative-caret-position="90">
+              <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
               <folding>
-                <element signature="e#650#1380#0" expanded="false" />
-                <element signature="e#1424#1523#0" expanded="false" />
-                <element signature="e#1572#1868#0" expanded="false" />
-                <element signature="e#1909#2266#0" expanded="false" />
-                <element signature="e#2303#2451#0" expanded="false" />
-                <element signature="e#2481#2526#0" expanded="false" />
-                <element signature="e#2558#3272#0" expanded="false" />
+                <element signature="e#719#1449#0" expanded="false" />
+                <element signature="e#1493#1592#0" expanded="false" />
+                <element signature="e#1641#1937#0" expanded="false" />
+                <element signature="e#1978#2335#0" expanded="false" />
+                <element signature="e#2372#2520#0" expanded="false" />
+                <element signature="e#2550#2595#0" expanded="false" />
+                <element signature="e#2627#3341#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="docs.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/bootstrap-social/assets/js/docs.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="8" column="31" lean-forward="true" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -126,7 +157,7 @@
             <path>
               <item name="EngiHub" type="b2602c69:ProjectViewProjectNode" />
               <item name="EngiHub" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -136,6 +167,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -384,7 +420,21 @@
       <option name="project" value="LOCAL" />
       <updated>1513084926319</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="#bug_check">
+      <created>1513085517451</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1513085517451</updated>
+    </task>
+    <task id="LOCAL-00030" summary="#bug_check">
+      <created>1513085585897</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1513085585897</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -457,7 +507,8 @@
     <MESSAGE value="#update host" />
     <MESSAGE value="update admin" />
     <MESSAGE value="&#10;update settings" />
-    <option name="LAST_COMMIT_MESSAGE" value="&#10;update settings" />
+    <MESSAGE value="#bug_check" />
+    <option name="LAST_COMMIT_MESSAGE" value="#bug_check" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -472,11 +523,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#45#0" expanded="false" />
-            <element signature="e#406#621#0" expanded="false" />
-            <element signature="e#650#1380#0" expanded="false" />
-            <element signature="e#1424#1523#0" expanded="false" />
-            <element signature="e#2481#2526#0" expanded="false" />
-            <element signature="e#2558#3272#0" expanded="false" />
+            <element signature="e#719#1449#0" expanded="false" />
+            <element signature="e#1493#1592#0" expanded="false" />
+            <element signature="e#2550#2595#0" expanded="false" />
+            <element signature="e#2627#3341#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -629,7 +679,7 @@
         <state relative-caret-position="72">
           <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -655,7 +705,7 @@
         <state relative-caret-position="124">
           <caret line="29" column="49" lean-forward="false" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
           <folding>
-            <element signature="e#311#320#0" expanded="true" />
+            <element signature="e#311#320#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -670,17 +720,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="19" column="38" lean-forward="false" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+        <state relative-caret-position="90">
+          <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
           <folding>
-            <element signature="e#650#1380#0" expanded="false" />
-            <element signature="e#1424#1523#0" expanded="false" />
-            <element signature="e#1572#1868#0" expanded="false" />
-            <element signature="e#1909#2266#0" expanded="false" />
-            <element signature="e#2303#2451#0" expanded="false" />
-            <element signature="e#2481#2526#0" expanded="false" />
-            <element signature="e#2558#3272#0" expanded="false" />
+            <element signature="e#719#1449#0" expanded="false" />
+            <element signature="e#1493#1592#0" expanded="false" />
+            <element signature="e#1641#1937#0" expanded="false" />
+            <element signature="e#1978#2335#0" expanded="false" />
+            <element signature="e#2372#2520#0" expanded="false" />
+            <element signature="e#2550#2595#0" expanded="false" />
+            <element signature="e#2627#3341#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/bootstrap-social/assets/js/docs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="31" lean-forward="true" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
