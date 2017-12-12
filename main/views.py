@@ -11,8 +11,12 @@ from .models import File
 
 
 def intro(request):
-    if request.user.is_authenticated:
-        return redirect('/dashboard')
+    try:
+        if request.user.is_authenticated:
+            return redirect('/dashboard')
+    except:
+        import sys
+        print(str(sys.exc_info()))
     return render(request, 'intro_templates/intro.html', {})
 
 
