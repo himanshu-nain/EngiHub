@@ -2,7 +2,6 @@ from django.conf.urls import url
 import main.views as view
 from django.contrib.auth import views as auth_views
 
-
 app_name = 'main'
 
 urlpatterns = [

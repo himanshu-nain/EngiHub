@@ -78,7 +78,7 @@ def download_file(request, path):
 
 def delete_file(request, id):
     try:
-        File.objects.filter(id=id).delete()
+        File.objects.get(pk=id).delete()
     except FileNotFoundError:
         return Http404
 

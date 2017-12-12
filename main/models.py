@@ -17,7 +17,7 @@ class File(models.Model):
     file = models.FileField(upload_to='uploaded_files/')
     size = models.FloatField(default=0.0, )
     size_postfix = models.CharField(blank=True, max_length=2)
-    upload_time = models.DateField(default=timezone.now())
+    upload_time = models.DateField(default=timezone.now)
 
     def clean(self):
 
@@ -39,6 +39,6 @@ class File(models.Model):
     def update(self):
         self.points = self.lcount - self.dlcount
 
-    def delete(self, *args, **kwargs):
-        os.remove(os.path.join(settings.MEDIA_ROOT.join('uploaded_files'), self.file.name))
-        super(File, self).delete(*args, **kwargs)
+    # def delete(self, *args, **kwargs):
+    #    os.remove(os.path.join(settings.MEDIA_ROOT, self.file))
+    #    super(File, self).delete(*args, **kwargs)
