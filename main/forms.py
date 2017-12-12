@@ -1,6 +1,8 @@
 from django.contrib.auth.models import User
 from django import forms
 from .models import File
+from django.conf import settings
+from django.core.exceptions import ValidationError
 
 
 class UserForm(forms.ModelForm):
@@ -23,3 +25,17 @@ class FileForm(forms.ModelForm):
     class Meta:
         model = File
         fields = ['name', 'author', 'desc', 'file']
+
+    def clean_file(self):
+        file = self.cleaned_data.get('file', False)
+        if file:
+
+            # type = file.content_type.split('/')[0]
+
+            if file._size > settings.MAX_UPLOAD_SIZE:
+                raise ValidationError("File size too large. Max size is 100 MB")
+            return file
+        else:
+            raise ValidationError("Could not read uploaded file")
+
+

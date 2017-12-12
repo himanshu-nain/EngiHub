@@ -2,20 +2,33 @@ from django.db import models
 import os
 from django.conf import settings
 from django.contrib.auth.models import Permission, User
+from django.utils import timezone
 
 
 class File(models.Model):
 
     name = models.CharField(max_length=40)
     author = models.CharField(max_length=40)
-    desc = models.CharField(max_length=255)
+    desc = models.CharField(max_length=255, blank=True)
     dcount = models.IntegerField(default=0)
     lcount = models.IntegerField(default=0)
     dlcount = models.IntegerField(default=0)
     points = models.IntegerField(default=0)
     file = models.FileField(upload_to='uploaded_files/')
-    size = models.FloatField(default=0.0)
+    size = models.FloatField(default=0.0, )
+    size_postfix = models.CharField(blank=True, max_length=2)
+    upload_time = models.DateField(default=timezone.now())
 
+    def clean(self):
+
+        temp = self.file.size / 1048576
+
+        if temp < 1:
+            self.size = float("{0:.2f}".format(temp * 1024))
+            self.size_postfix = 'KB'
+        else:
+            self.size = float("{0:.2f}".format(temp))
+            self.size_postfix = 'MB'
 
     def uplike(self):
         self.lcount = self.lcount + 1

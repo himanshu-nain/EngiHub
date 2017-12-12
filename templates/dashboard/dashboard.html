@@ -23,7 +23,8 @@
     </div>
 
     <div class="mdl-card__supporting-text">
-    {{ afile.size }} MiB <br>
+    Uploaded On: {{ afile.upload_time }}<br>
+    File Size: {{ afile.size }} {{ afile.size_postfix }} <br><br>
     {{ afile.desc }}
     </div>
     <div class="mdl-card__actions mdl-card--border">
