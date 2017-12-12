@@ -14,10 +14,11 @@ def intro(request):
     try:
         if request.user.is_authenticated:
             return redirect('/dashboard')
+        return render(request, 'intro_templates/intro.html', {})
     except:
         import sys
         print(str(sys.exc_info()))
-    return render(request, 'intro_templates/intro.html', {})
+        return render(request, 'intro_templates/intro.html', {})
 
 
 def _login_(request):
