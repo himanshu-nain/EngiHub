@@ -26,7 +26,7 @@ SECRET_KEY = '5baa%0z9e0of-@698j-htxnl3f%1%si#cqxr8#6lz(ah^zkn9x'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '*'
+    'engihub.herokuapp.com',
 ]
 
 
