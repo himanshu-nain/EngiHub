@@ -1,1 +1,1 @@
-web: gunicorn EngiHub.wsgi
+web: gunicorn EngiHub.wsgi --log-file -
