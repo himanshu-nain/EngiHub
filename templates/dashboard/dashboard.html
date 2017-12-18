@@ -1,7 +1,7 @@
 
 
 {% extends 'dashboard/base-login.html' %}
-{% block title %}My Files | EngiHub{% endblock %}
+{% block title %}Dashboard | EngiHub{% endblock %}
 {% load static staticfiles %}
 
     {% block stylesheets %}
@@ -31,9 +31,12 @@
       <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple" href="{% url 'main:file_download' path=afile.file %}">Download</a>
       <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">Report</a>
     </div>
+
+    {% ifequal afile.uploader_id request.user.id %}
     <div class="mdl-card__menu">
         <a href="{% url 'main:file_delete' id=afile.id %}"> <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple"><i class="material-icons">delete</i></button></a>
     </div>
+    {% endifequal %}
 </div>
         <br><br>
     {% endfor %}

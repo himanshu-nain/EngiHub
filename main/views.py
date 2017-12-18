@@ -43,6 +43,7 @@ def _login_(request):
 
 @login_required
 def _dash_(request):
+
     try:
         files = File.objects.all()
         return render(request, 'dashboard/dashboard.html', {'files': files})
@@ -52,12 +53,22 @@ def _dash_(request):
         files = []
         return render(request, 'dashboard/dashboard.html', {'files': files})
 
+
+@login_required
+def _my_uploads_(request):
+    user_id = request.user.id
+    files = File.objects.filter(uploader_id=user_id)
+    return render(request, 'dashboard/dashboard.html', {'files': files})
+
+
 @login_required
 def upload_file(request):
     form = FileForm(request.POST or None)
     if request.method == 'POST':
         form = FileForm(request.POST, request.FILES)
         if form.is_valid():
+            form = form.save(commit=False)
+            form.uploader = request.user
             form.save()
             return redirect('/dashboard')
 
@@ -111,3 +122,5 @@ def _register_(request):
         "form": form,
     }
     return render(request, 'login/register.html', context)
+
+

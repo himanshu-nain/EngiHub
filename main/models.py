@@ -1,6 +1,4 @@
 from django.db import models
-import os
-from django.conf import settings
 from django.contrib.auth.models import Permission, User
 from django.utils import timezone
 
@@ -18,6 +16,7 @@ class File(models.Model):
     size = models.FloatField(default=0.0, )
     size_postfix = models.CharField(blank=True, max_length=2)
     upload_time = models.DateField(default=timezone.now)
+    uploader = models.ForeignKey(User, blank=True, on_delete=models.CASCADE)
 
     def clean(self):
 
