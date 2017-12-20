@@ -124,7 +124,12 @@ USE_TZ = True
 
 LOGIN_URL = '/login/'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_PASSWORD = 'PassEngihub1234'
+EMAIL_HOST_USER = 'mail.engihub@gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 MAX_UPLOAD_SIZE = 104857600
 
