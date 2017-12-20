@@ -86,18 +86,31 @@
     {{ afile.desc }}
     </div>
     <div class="mdl-card__actions mdl-card--border">
-      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{% url 'main:file_download' path=afile.file %}">Download</a>
-      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" >Report</a>
+      <a id="download" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{% url 'main:file_download' path=afile.file %}">Download</a>
+      <div class="mdl-tooltip" for="download">
+            Download file {{ afile.file | cut:"uploaded_files/" }}
+      </div>
+
+      <a id="report" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" >Report</a>
+      <div class="mdl-tooltip" for="report">
+            Report this file
+      </div>
       {% ifequal afile.uploader_id request.user.id %}
-        <a href="{% url 'main:file_delete' id=afile.id %}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Delete</a>
+        <a id="delete" href="{% url 'main:file_delete' id=afile.id %}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Delete</a>
+      <div class="mdl-tooltip" for="delete">
+            Delete file {{ afile.file | cut:"uploaded_files/" }}
+      </div>
       {% endifequal %}
     </div>
 
     <div class="mdl-card__menu">
-        <button onclick="showToast()" class="share_button mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" data-clipboard-text="https://engihub.herokuapp.com/detail/{{ afile.id }}">
+        <button onclick="showToast()" id="share" class="share_button mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" data-clipboard-text="https://engihub.herokuapp.com/detail/{{ afile.id }}">
         <i class="material-icons">share</i>
         </button>
     </div>
+        <div class="mdl-tooltip mdl-tooltip--large" for="share">
+            Share this file
+        </div>
 
 </div>
         <br><br>

@@ -1,24 +1,37 @@
 {% extends 'dashboard/base-login.html' %}
 {% block title %}Upload | EngiHub{% endblock %}
 {% load static staticfiles %}
- {% block stylesheets %}
 
-    <link rel="stylesheet" href={% static "file/style.css" %}>
-
+{% block stylesheets %}
+    <style>
+      .demo-card-wide.mdl-card {
+          width: 512px;
+          margin: 0 auto;
+          margin-top: 40px;
+  }
+    </style>
 {% endblock %}
 
 {% block content %}
- 
 
-  <form role="form" action="" method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {% for field in form %}
-        {{ field }}
-    {% endfor %}
-    <div class="form-group">
-        <button class="mdl-button mdl-js-button mdl-button--raised" type="submit">Upload</button>
+    <div class="demo-card-wide mdl-card mdl-shadow--2dp mdl-card--horizontal">
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">File Details</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+            <form role="form" action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        {{ field | cut:"required"}}
+                        <label class="mdl-textfield__label" for="name">{{ field.label|cut:"File" }}</label>
+                    </div>
+                {% endfor %}
+                <div class="mdl-card__actions mdl-card--border">
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" type="submit">Upload</button>
+                </div>
+            </form>
+        </div>
     </div>
-  </form>
-
 {% endblock %}
 
