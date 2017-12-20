@@ -86,18 +86,18 @@
     {{ afile.desc }}
     </div>
     <div class="mdl-card__actions mdl-card--border">
-      <a id="download" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{% url 'main:file_download' path=afile.file %}">Download</a>
-      <div class="mdl-tooltip" for="download">
+      <a id="download{{ afile.pk }}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{% url 'main:file_download' path=afile.file %}">Download</a>
+      <div class="mdl-tooltip" for="download{{ afile.pk }}">
             Download file {{ afile.file | cut:"uploaded_files/" }}
       </div>
 
-      <a id="report" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" >Report</a>
-      <div class="mdl-tooltip" for="report">
+      <a id="report{{ afile.pk }}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" >Report</a>
+      <div class="mdl-tooltip" for="report{{ afile.pk }}">
             Report this file
       </div>
       {% ifequal afile.uploader_id request.user.id %}
-        <a id="delete" href="{% url 'main:file_delete' id=afile.id %}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Delete</a>
-      <div class="mdl-tooltip" for="delete">
+        <a id="delete{{ afile.pk }}" href="{% url 'main:file_delete' id=afile.id %}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Delete</a>
+      <div class="mdl-tooltip" for="delete{{ afile.pk }}">
             Delete file {{ afile.file | cut:"uploaded_files/" }}
       </div>
       {% endifequal %}
