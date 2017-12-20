@@ -8,9 +8,67 @@
 
     <link rel="stylesheet" href={% static "dashboard/dash.css" %}>
 
-{% endblock %}
+    <!-- toast style -->
+    <style>
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+</style>
+
+    {% endblock %}
 
 {% block content %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
+
+    <script>
+        new Clipboard('.share_button');
+    </script>
+
+    <!-- Toast function -->
+    <script>
+        function showToast() {
+        var x = document.getElementById("snackbar")
+        x.className = "show";
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);}
+    </script>
 
     {% for afile in files %}
 
@@ -28,19 +86,24 @@
     {{ afile.desc }}
     </div>
     <div class="mdl-card__actions mdl-card--border">
-      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple" href="{% url 'main:file_download' path=afile.file %}">Download</a>
-      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">Report</a>
+      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{% url 'main:file_download' path=afile.file %}">Download</a>
+      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" >Report</a>
+      {% ifequal afile.uploader_id request.user.id %}
+        <a href="{% url 'main:file_delete' id=afile.id %}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Delete</a>
+      {% endifequal %}
     </div>
 
-    {% ifequal afile.uploader_id request.user.id %}
     <div class="mdl-card__menu">
-        <a href="{% url 'main:file_delete' id=afile.id %}"> <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple"><i class="material-icons">delete</i></button></a>
+        <button onclick="showToast()" class="share_button mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" data-clipboard-text="https://engihub.herokuapp.com/detail/{{ afile.id }}">
+        <i class="material-icons">share</i>
+        </button>
     </div>
-    {% endifequal %}
+
 </div>
         <br><br>
     {% endfor %}
-
+    <!-- Toast Text -->
+    <div id="snackbar">Copied to clipboard!</div>
 {% endblock %}
 
 
