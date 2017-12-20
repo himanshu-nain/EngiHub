@@ -104,11 +104,11 @@
     </div>
 
     <div class="mdl-card__menu">
-        <button onclick="showToast()" id="share" class="share_button mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" data-clipboard-text="https://engihub.herokuapp.com/detail/{{ afile.id }}">
+        <button onclick="showToast()" id="share{{ afile.pk }}" class="share_button mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" data-clipboard-text="https://engihub.herokuapp.com/detail/{{ afile.id }}">
         <i class="material-icons">share</i>
         </button>
     </div>
-        <div class="mdl-tooltip mdl-tooltip--large" for="share">
+        <div class="mdl-tooltip mdl-tooltip--large" for="share{{ afile.pk }}">
             Share this file
         </div>
 
