@@ -2,8 +2,50 @@
 {% block title %}{{ file.name }} | EngiHub{% endblock %}
 {% load static %}
 
-{% block content %}
+{% block stylesheets %}
+    <link rel="stylesheet" href={% static "dashboard/detail.css" %}>
+{% endblock %}
 
-    <div class="demo-card-wide mdl-card mdl-shadow--2dp mdl-card--horizontal">
-    </div>
+{% block content %}
+    
+     <div class="mdl-card mdl-shadow--2dp mdl-card--horizontal">
+         <div class="mdl-card__media">
+             <img src="{% static "icons/file-icon-7890.png" %}" alt="img">
+         </div>
+         <div class="mdl-card__title">
+             <h2 class="mdl-card__title-text">{{ file.name }}</h2>
+         </div>
+         <div class="mdl-card__supporting-text">
+             Uploaded By: {{ file.uploader }}<br><br>
+             Uploaded On: {{ file.upload_time }}<br>
+             File Size: {{ file.size }} {{ file.size_postfix }} <br><br>
+             Description:<br>&nbsp;&nbsp;&nbsp;&nbsp;{{ file.desc }}
+         </div>
+         
+         <div class="mdl-card__actions mdl-card--border">
+             <a id="download{{ file.pk }}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{% url 'main:file_download' path=file.file %}">Download</a>
+             <div class="mdl-tooltip" for="download{{ file.pk }}">
+                 Download file {{ file.file | cut:"uploaded_files/" }}
+             </div>
+             <a id="report{{ file.pk }}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" >Report</a>
+             <div class="mdl-tooltip" for="report{{ file.pk }}">
+                 Report this file
+             </div>
+             {% ifequal file.uploader_id request.user.id %}
+                 <a id="delete{{ file.pk }}" href="{% url 'main:file_delete' id=file.id %}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Delete</a>
+                 <div class="mdl-tooltip" for="delete{{ file.pk }}">
+                     Delete file {{ file.file | cut:"uploaded_files/" }}
+                 </div>
+             {% endifequal %}
+         </div>
+         
+         <div class="mdl-card__menu">
+             <button onclick="showToast()" id="share{{ file.pk }}" class="share_button mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" data-clipboard-text="https://engihub.herokuapp.com/detail/{{ file.id }}">
+                 <i class="material-icons">share</i>
+             </button>
+         </div>
+         <div class="mdl-tooltip mdl-tooltip--large" for="share{{ file.pk }}">
+             Share this file
+         </div>
+     </div>
 {% endblock %}

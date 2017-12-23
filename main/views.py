@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.models import User
 import os
 from django.conf import settings
 from django.http import HttpResponse, Http404, HttpResponseRedirect
@@ -127,6 +128,7 @@ def _register_(request):
 def file_details(request, id):
     try:
         file = File.objects.get(pk=id)
+
         return render(request, 'file/detail.html', {'file':file})
     except FileNotFoundError:
         return Http404
