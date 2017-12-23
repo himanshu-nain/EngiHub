@@ -97,6 +97,20 @@ def delete_file(request, id):
     return HttpResponseRedirect('/dashboard')
 
 
+def like(request, id):
+    obj = File.objects.get(pk=id)
+    obj.uplike()
+    obj.save()
+    return HttpResponseRedirect('/dashboard')
+
+
+def dislike(request, id):
+    obj = File.objects.get(pk=id)
+    obj.downlike()
+    obj.save()
+    return HttpResponseRedirect('/dashboard')
+
+
 def _logout_(request):
     outlog(request)
     return redirect('/login')

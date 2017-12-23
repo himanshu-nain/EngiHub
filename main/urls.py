@@ -15,5 +15,8 @@ urlpatterns = [
     url(r'^delete/(?P<id>\d+)$', view.delete_file, name='file_delete'),
     url(r'^myuploads/$', view._my_uploads_, name='my_uploads'),
     url(r'^detail/(?P<id>\d+)$', view.file_details, name='file_detail'),
+    url(r'^like/(?P<id>\d+)$', view.like, name='like'),
+    url(r'^dislike/(?P<id>\d+)$', view.dislike, name='dislike'),
+
 
 ]

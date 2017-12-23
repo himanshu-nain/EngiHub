@@ -31,9 +31,11 @@ class File(models.Model):
 
     def uplike(self):
         self.lcount = self.lcount + 1
+        self.update()
 
     def downlike(self):
         self.dlcount = self.dlcount + 1
+        self.update()
 
     def update(self):
         self.points = self.lcount - self.dlcount
