@@ -14,5 +14,6 @@ urlpatterns = [
     url(r'^download/(?P<path>.*)$', view.download_file, name='file_download'),
     url(r'^delete/(?P<id>\d+)$', view.delete_file, name='file_delete'),
     url(r'^myuploads/$', view._my_uploads_, name='my_uploads'),
+    url(r'^detail/(?P<id>\d+)$', view.file_details, name='file_detail'),
 
 ]

@@ -124,3 +124,9 @@ def _register_(request):
     return render(request, 'login/register.html', context)
 
 
+def file_details(request, id):
+    try:
+        file = File.objects.get(pk=id)
+        return render(request, 'file/detail.html', {'file':file})
+    except FileNotFoundError:
+        return Http404
