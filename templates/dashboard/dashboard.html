@@ -86,7 +86,7 @@
             </div>
             <div class="mdl-card__actions mdl-card--border">
 
-                <span style="font-size: large">{{ afile.points }} Points</span>
+                <span style="font-size: large">{{ afile.points }} Point(s)</span>
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="{% url 'main:like' afile.id %}" id="like{{ afile.pk }}" class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect">
                     <i class="material-icons">thumb_up</i>
@@ -106,10 +106,10 @@
 
             </div>
 
-            <button class="mdl-card__menu mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn2">
+            <button class="mdl-card__menu mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn2{{ afile.pk }}">
               <i class="material-icons">more_vert</i>
             </button>
-            <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn2">
+            <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn2{{ afile.pk }}">
                 <li class="share_button" onclick="showToast()" data-clipboard-text="https://engihub.herokuapp.com/detail/{{ afile.id }}"><a class="mdl-menu__item">Share</a></li>
                 <li><a class="mdl-menu__item" href="{% url 'main:file_download' path=afile.file %}">Download</a></li>
                 <li><a href="{% url 'main:file_delete' id=afile.id %}"
