@@ -9,7 +9,7 @@
 
 .mdl-card--horizontal {
   flex-direction: column;
-  height: 350px;
+  height: 80vh;
   /* 1 */
   padding-left: 150px;
   width: 100%;

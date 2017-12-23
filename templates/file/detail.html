@@ -9,12 +9,15 @@
 {% block content %}
     
      <div class="mdl-card mdl-shadow--2dp mdl-card--horizontal">
+
          <div class="mdl-card__media">
              <img src="{% static "icons/file-icon-7890.png" %}" alt="img">
          </div>
+
          <div class="mdl-card__title">
              <h2 class="mdl-card__title-text">{{ file.name }}</h2>
          </div>
+
          <div class="mdl-card__supporting-text">
              Uploaded By: {{ file.uploader }}<br><br>
              Uploaded On: {{ file.upload_time }}<br>
@@ -44,6 +47,7 @@
                  <i class="material-icons">share</i>
              </button>
          </div>
+
          <div class="mdl-tooltip mdl-tooltip--large" for="share{{ file.pk }}">
              Share this file
          </div>
