@@ -10,6 +10,7 @@
     <link rel="stylesheet" href={% static "bootstrap/css/bootstrap-grid.min.css" %}>
     <link rel="stylesheet" href={% static "font-awesome/css/font-awesome.min.css" %}>
     <link rel="shortcut icon" type="image/x-icon" href="{% static "favicon/favicon.ico" %}"/>
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
 </head>
 <body>
 <header>
@@ -37,16 +38,6 @@
                 <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>&nbsp;
                 Features</a>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#">
-                <span class="glyphicon glyphicon-book" aria-hidden="true"></span>&nbsp;
-                About Us</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#">
-                <span class="glyphicon glyphicon-phone" aria-hidden="true"></span>&nbsp;
-                Contact Us</a>
-          </li>
         </ul>
       </div>
     </nav>
@@ -61,7 +52,7 @@
             <tr>
               <td class="align-middle">    
                 <img src="{% static "main/images/logo.png" %}" alt="Logo" class="logo">
-                <h1 class="title">Tagline goes here</h1>
+                <h3 style="font-family: monospace">Share with care... <i class="em em-blush"></i></h3>
                 <form method="get"
                 {% if user.is_authenticated %}
                         action = "{% url 'main:dashboard' %}"
@@ -70,14 +61,17 @@
                 {% endif %}>
                     <button onclick="" type="Submit" class="go-btn display-2 btn btn-primary btn-lg ">Get Started</button>
                 </form>
+                <br>
+                  <span>Made with <i class="em em-heart"></i> in <i class="em em-flag-in"></i> </span>
+
               </td>
             </tr>
           </tbody>
         </table>
+        <span>Made with <i class="em em-heart"></i> in <i class="em em-flag-in"></i> </span>
     </div>
   </div>
 </div>
-
 
 
 </body>
