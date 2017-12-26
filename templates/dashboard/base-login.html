@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href={% static "dashboard/style.css"%}>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-    <link rel="shortcut icon" type="image/x-icon" href="{% static "favicon/favicon.ico" %}"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static "logo/logo.png" %}" style="width: 16px; height: 16px;">
     <link rel="stylesheet" href={% static "mdl/material.css"%}>
     <link rel="stylesheet" href={% static "bootstrap/css/bootstrap-grid.min.css" %}>
     <link rel="stylesheet" href={% static "font-awesome/css/font-awesome.min.css" %}>
@@ -19,7 +18,7 @@
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
       <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title"> EngiHub </span>
+          <span class="mdl-layout-title"><img src="{% static "logo/logo.png" %}" alt="Logo" style="height: 5vh; width: 4vw; margin-right: 1vh"> EngiHub </span>
           <div class="mdl-layout-spacer"></div>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
             <label class="mdl-button mdl-js-button mdl-button--icon" for="search">

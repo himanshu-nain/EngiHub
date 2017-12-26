@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>{% block title %}{% endblock %}</title>
-<link rel="shortcut icon" type="image/x-icon" href="{% static "favicon/favicon.ico" %}"/>
    <link rel="stylesheet" href={% static "mdl/material.css" %}>
     <link rel="stylesheet" href={% static "bootstrap/css/bootstrap.css" %}>
     <link rel="stylesheet" href={% static "bootstrap/css/bootstrap-grid.min.css" %}>
     <link rel="stylesheet" href={% static "font-awesome/css/font-awesome.min.css" %}>
+    <link rel="shortcut icon" href="{% static "logo/logo.png" %}" style="width: 16px; height: 16px;">
+
     {% block stylesheets %}{% endblock %}
 </head>
 <body>

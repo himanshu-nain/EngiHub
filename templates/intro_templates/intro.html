@@ -9,14 +9,14 @@
     <link rel="stylesheet" href={% static "bootstrap/css/bootstrap.min.css" %}>
     <link rel="stylesheet" href={% static "bootstrap/css/bootstrap-grid.min.css" %}>
     <link rel="stylesheet" href={% static "font-awesome/css/font-awesome.min.css" %}>
-    <link rel="shortcut icon" type="image/x-icon" href="{% static "favicon/favicon.ico" %}"/>
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static "logo/logo.png" %}" style="width: 16px; height: 16px;">
 </head>
 <body>
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-     <a class="navbar-brand" href="">EngiHub</a>
+     <a class="navbar-brand" href=""><img src="{% static "logo/logo.png" %}" alt="Logo" style="height: 5vh; width: 4vw; margin-right: 1vh">EngiHub</a>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -51,7 +51,7 @@
           <tbody>
             <tr>
               <td class="align-middle">    
-                <img src="https://placehold.it/600x600&text=EngiHub" alt="Logo" class="logo">
+                <img src="{% static "logo/LogowithText.png" %}" alt="Logo" class="logo">
                 <h3 style="font-family: monospace">Share with care... <i class="em em-blush"></i></h3>
                 <form method="get"
                 {% if user.is_authenticated %}

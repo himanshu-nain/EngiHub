@@ -70,6 +70,8 @@
         setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);}
     </script>
 
+    {% if files.count > 0 %}
+
     {% for afile in files %}
         <div class="mdl-card mdl-shadow--2dp mdl-card--horizontal">
             <div class="mdl-card__media">
@@ -124,8 +126,18 @@
         <br>
     {% endfor %}
 
+    {% else %}
+
+        <div style="margin: 0 auto; padding: 10px;">
+            <img src="{% static "icons/nothingBin.png" %}" class="content" alt="Nothing Here"/>
+            <img src="{% static "icons/nothingText.png" %}" class="content"/>
+        </div>
+
+    {% endif %}
+
     <!-- Toast Text -->
     <div id="snackbar">Copied to clipboard!</div>
+
 {% endblock %}
 
 
