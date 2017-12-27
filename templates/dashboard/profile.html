@@ -8,6 +8,7 @@
             padding: 10px;
             min-width: 50vw;
             margin: 10px auto 0;
+            margin-bottom: 20px;
         }
         .profile-pic{
             padding: 10px;
@@ -38,34 +39,34 @@
                 <i class="material-icons mdl-list__item-icon">person</i>
                 &nbsp;
                 <span class="mdl-list__item-primary-content">
-                    First Name:
+                    First Name: &nbsp;{{ user.first_name }}
                 </span>
             </li>
             <li class="mdl-list__item ">
                 <i class="material-icons mdl-list__item-icon">person</i>
                 &nbsp;
                 <span class="mdl-list__item-primary-content">
-                    Last Name:
+                    Last Name: &nbsp;{{ user.last_name }}
                 </span>
             </li>
             <li class="mdl-list__item ">
                 <i class="material-icons mdl-list__item-icon">person_outline</i>
                 &nbsp;
                 <span class="mdl-list__item-primary-content">
-                    Username:
+                    Username: &nbsp;{{ user.username }}
                 </span>
             </li>
             <li class="mdl-list__item ">
                 <i class="material-icons mdl-list__item-icon">email</i>
                 &nbsp;
                 <span class="mdl-list__item-primary-content">
-                    Email:
+                    Email: &nbsp;{{ user.email }}
                 </span>
             </li>
         </ul>
         <div class="mdl-card__actions mdl-card--border">
-            <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" style="background-color: #ff2b4a;" type="submit">Change Password</a>
-            <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" style="background-color: #25d25b;" type="submit">Change Email</a>
+            <a href="{% url 'main:change_password' %}" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" style="background-color: #ff2b4a;" type="submit">Change Password</a>
+            <a href="{% url 'main:change_email' %}" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" style="background-color: #20b74f;" type="submit">Change Email</a>
         </div>
     </div>
 

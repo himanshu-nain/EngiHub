@@ -1,0 +1,9 @@
+{% extends 'base/base.html' %}
+{% block title %}Change Email | EngiHub{% endblock %}
+{% block content %}
+<form style="margin: 20px" class="form-horizontal" role="form" method="post">
+  {% csrf_token %}
+  <input type="email" name="newEmail" class="form-control" placeholder="New Email Address" required autofocus/><br><br>
+  <button class="btn btn-primary" type="submit">Save changes</button>
+</form>
+{% endblock %}

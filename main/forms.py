@@ -1,3 +1,4 @@
+from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth.models import User
 from django import forms
 from .models import File
@@ -39,3 +40,9 @@ class FileForm(forms.ModelForm):
             raise ValidationError("Could not read uploaded file")
 
 
+class FormChangePassword(PasswordChangeForm):
+
+    def __init__(self, *args, **kwargs):
+        super(FormChangePassword, self).__init__(*args, **kwargs)
+        for field in ('old_password', 'new_password1', 'new_password2'):
+            self.fields[field].widget.attrs = {'class': 'form-control'}

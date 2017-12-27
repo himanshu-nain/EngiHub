@@ -1,12 +1,14 @@
-from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib import messages
+from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth.models import User
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login, update_session_auth_hash
 import os
 from django.conf import settings
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.contrib.auth import logout as outlog
 from django.contrib.auth.decorators import login_required
-from .forms import UserForm, FileForm
+from .forms import UserForm, FileForm, FormChangePassword
 
 from .models import File
 
@@ -153,3 +155,32 @@ def my_account(request):
 
     return render(request, 'dashboard/profile.html',{})
 
+
+def change_password(request):
+    if request.method == 'POST':
+        form = FormChangePassword(request.user, request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)
+            messages.success(request, 'Your password was successfully updated!')
+            return redirect('change_password')
+        else:
+            messages.error(request, 'Please correct the error below.')
+    else:
+        form = FormChangePassword(request.user)
+    return render(request, 'accounts/change_password.html', {
+        'form': form
+    })
+
+
+@login_required
+def change_email(request):
+    if request.method == 'POST':
+        newEmail = request.POST['newEmail']
+        user = User.objects.get(username = request.user.username)
+        user.email = newEmail
+        user.save()
+        return redirect('/account')
+
+    else:
+        return render(request, 'accounts/change_email.html', {})

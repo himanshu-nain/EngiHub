@@ -1,6 +1,5 @@
 from django.conf.urls import url
 import main.views as view
-from django.contrib.auth import views as auth_views
 
 app_name = 'main'
 
@@ -18,5 +17,8 @@ urlpatterns = [
     url(r'^like/(?P<id>\d+)$', view.like, name='like'),
     url(r'^dislike/(?P<id>\d+)$', view.dislike, name='dislike'),
     url(r'^account/$', view.my_account, name='my_account'),
+    url(r'^password/$', view.change_password, name='change_password'),
+    url(r'^email/$', view.change_email, name='change_email'),
+
 
 ]
