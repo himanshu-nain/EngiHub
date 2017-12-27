@@ -146,3 +146,10 @@ def file_details(request, id):
         return render(request, 'file/detail.html', {'file':file})
     except FileNotFoundError:
         return Http404
+
+
+@login_required
+def my_account(request):
+
+    return render(request, 'dashboard/profile.html',{})
+

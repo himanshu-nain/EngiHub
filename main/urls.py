@@ -17,6 +17,6 @@ urlpatterns = [
     url(r'^detail/(?P<id>\d+)$', view.file_details, name='file_detail'),
     url(r'^like/(?P<id>\d+)$', view.like, name='like'),
     url(r'^dislike/(?P<id>\d+)$', view.dislike, name='dislike'),
-
+    url(r'^account/$', view.my_account, name='my_account'),
 
 ]

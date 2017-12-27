@@ -1,0 +1,73 @@
+{% extends 'dashboard/base-login.html' %}
+{% block title %}My Profile | EngiHub{% endblock %}
+{% load static %}
+
+{% block stylesheets %}
+    <style>
+        .demo-card-wide.mdl-card {
+            padding: 10px;
+            min-width: 50vw;
+            margin: 10px auto 0;
+        }
+        .profile-pic{
+            padding: 10px;
+            height: 25vh;
+            display: block;
+            max-width: 50vw;
+            border-radius: 50%;
+            margin: 0 auto;
+        }
+
+    </style>
+{% endblock %}
+
+{% block content %}
+
+    <div style="text-align: center">
+    <img src="{% static "avatar/male.png" %}" class="profile-pic" alt="Profile Image"/>
+    <a href="#" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Change Picture</a>
+    <br><br>
+    </div>
+    <div class="demo-card-wide mdl-card mdl-shadow--2dp mdl-card--horizontal" >
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">My Account</h2>
+        </div>
+
+        <ul class="mdl-list">
+            <li class="mdl-list__item ">
+                <i class="material-icons mdl-list__item-icon">person</i>
+                &nbsp;
+                <span class="mdl-list__item-primary-content">
+                    First Name:
+                </span>
+            </li>
+            <li class="mdl-list__item ">
+                <i class="material-icons mdl-list__item-icon">person</i>
+                &nbsp;
+                <span class="mdl-list__item-primary-content">
+                    Last Name:
+                </span>
+            </li>
+            <li class="mdl-list__item ">
+                <i class="material-icons mdl-list__item-icon">person_outline</i>
+                &nbsp;
+                <span class="mdl-list__item-primary-content">
+                    Username:
+                </span>
+            </li>
+            <li class="mdl-list__item ">
+                <i class="material-icons mdl-list__item-icon">email</i>
+                &nbsp;
+                <span class="mdl-list__item-primary-content">
+                    Email:
+                </span>
+            </li>
+        </ul>
+        <div class="mdl-card__actions mdl-card--border">
+            <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" style="background-color: #ff2b4a;" type="submit">Change Password</a>
+            <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" style="background-color: #25d25b;" type="submit">Change Email</a>
+        </div>
+    </div>
+
+
+{% endblock %}
