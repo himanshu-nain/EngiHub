@@ -182,5 +182,21 @@ def change_email(request):
         user.save()
         return redirect('/account')
 
-    else:
-        return render(request, 'accounts/change_email.html', {})
+    return render(request, 'accounts/change_email.html', {})
+
+
+@login_required
+def delete_account(request):
+
+    if request.method == 'POST':
+        password = request.POST['password']
+
+        user = authenticate(username = request.user.username, password = password)
+
+        if user is not None:
+            User.objects.get(username=request.user.username).delete()
+            return redirect('/')
+        else:
+            return render(request, 'accounts/delete_account.html', {'errors':'Password Incorrect'})
+
+    return render(request, 'accounts/delete_account.html', {})

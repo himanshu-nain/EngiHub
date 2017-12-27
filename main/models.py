@@ -16,7 +16,7 @@ class File(models.Model):
     size = models.FloatField(default=0.0, )
     size_postfix = models.CharField(blank=True, max_length=2)
     upload_time = models.DateField(default=timezone.now)
-    uploader = models.ForeignKey(User, blank=True, on_delete=models.CASCADE, default=2)
+    uploader = models.ForeignKey(User, blank=True, on_delete=models.SET_NULL, null=True)
 
     def clean(self):
 

@@ -1,0 +1,13 @@
+{% extends 'base/base.html' %}
+{% block title %}Delete Account | EngiHub{% endblock %}
+{% block content %}
+<h3 style="margin: 20px">Delete Account</h3>
+    {% if errors %}
+        <b><span style="margin: 20px" class="text-danger">{{ errors }}</span></b>
+    {% endif%}
+<form style="margin: 20px" class="form-horizontal" role="form" method="post">
+  {% csrf_token %}
+  <input type="password" name="password" class="form-control" placeholder="Enter Your Password" required autofocus/><br><br>
+  <button class="btn btn-danger" type="submit">Delete Account</button>
+</form>
+{% endblock %}

@@ -19,6 +19,6 @@ urlpatterns = [
     url(r'^account/$', view.my_account, name='my_account'),
     url(r'^password/$', view.change_password, name='change_password'),
     url(r'^email/$', view.change_email, name='change_email'),
-
+    url(r'^deleteAccount/$', view.delete_account, name='delete_account'),
 
 ]
